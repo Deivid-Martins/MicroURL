@@ -29,7 +29,11 @@ document.getElementById("linkForm").addEventListener("submit", async (event) => 
 
         // Processa a resposta do servidor
         const result = await response.json();
-        document.getElementById("result").textContent = `https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}`;
+        document.getElementById("result").innerHTML = `<a href="https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}" target="_blank">https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}</a>`;
+        document.getElementById("result").style.backgroundColor = "#728897";
+        document.getElementById("result").style.borderRadius = "4px";
+        document.getElementById("result").style.padding = "10px";
+
         document.getElementById("button").textContent = "Submit"; // Restaura o texto do botão
     } catch (error) {
         console.error("Erro ao encurtar link:", error);
