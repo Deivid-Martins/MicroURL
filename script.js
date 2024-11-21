@@ -3,7 +3,13 @@ const URL_API = "https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com";
 document.getElementById("linkForm").addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const originalUrl = document.getElementById("originalUrl").value;
+    document.getElementById("url").addEventListener("blur", function() {
+        let url = this.value;
+        // Verificar se o link começa com qualquer outra coisa sem "https://"
+        if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+            this.value = 'https://' + url;
+        }
+    });
     document.getElementById("button").textContent = "Wait a bit...";
 
     const currentDate = new Date();
