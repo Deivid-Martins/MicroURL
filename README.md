@@ -6,3 +6,6 @@ Site for shortening URLs made with various services. On the front-end I only use
 Português-Brasil:
 
 Site para encurtar URLs feita com diversos serviços. No front-end usei apenas html, css e javascript. No back-end usei a linguagem de programação Java, no projeto Java, usei algumas dependências, como a própria lambda, lombok e o jackson. Coloquei minha API criada no Amazon Web Services(AWS), pelo API Gateway, bom, para criar a mesma, utilizei também de alguns serviços da AWS, o AWS Lambda e AWS S3, e para verificar se tinha algum erro existente, utilizei o CloudWatch. Sei que o intuito era um link curto, mas não tenho um dominio para encurtar esse URL gerado pela API, mas a geração e redirecionamento para o mesmo está funcionando sem problemas.
+
+## Visit website:
+https://deivid-martins.github.io/MicroURL/
