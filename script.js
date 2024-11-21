@@ -12,7 +12,7 @@ document.getElementById("linkForm").addEventListener("submit", async (event) => 
     const expirationTimestampInSeconds = Math.floor(expirationDateInMilliseconds / 1000);
 
     try {
-        const response = await fetch(URL_API + "/create", {
+        const response = await fetch("https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/create", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -22,7 +22,7 @@ document.getElementById("linkForm").addEventListener("submit", async (event) => 
         });
 
         const result = await response.json();
-        document.getElementById("result").textContent = `${URL_API}/${result.code}`;
+        document.getElementById("result").textContent = `https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}`;
         document.getElementById("button").textContent = "Submit";
     } catch (error) {
         console.error("Erro ao encurtar link:", error);
