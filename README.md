@@ -1,5 +1,4 @@
 # MicroURL
-On microServicesLambda, you can see why this "magic" run on backend, hosted on aws services, and halfed in microservices
 
 # English:
 
