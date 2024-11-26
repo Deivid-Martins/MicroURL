@@ -1,3 +1,5 @@
+const UrlApi = "api.exemploDeUrlDaApi.org";
+
 document.getElementById("linkForm").addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -18,7 +20,7 @@ document.getElementById("linkForm").addEventListener("submit", async (event) => 
     const expirationTimestampInSeconds = Math.floor(expirationDateInMilliseconds / 1000);
 
     try {
-        const response = await fetch("https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/create", {
+        const response = await fetch(`${UrlApi}/create`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -29,7 +31,7 @@ document.getElementById("linkForm").addEventListener("submit", async (event) => 
 
         // Processa a resposta do servidor
         const result = await response.json();
-        document.getElementById("result").innerHTML = `<a href="https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}" target="_blank">https://zp2zegwi15.execute-api.sa-east-1.amazonaws.com/${result.code}</a>`;
+        document.getElementById("result").innerHTML = `<a href="${UrlApi}/${result.code}" target="_blank">https://api.exemploDeUrlDaApi.org/${result.code}</a>`;
         document.getElementById("result").style.backgroundColor = "#728897";
         document.getElementById("result").style.borderRadius = "4px";
         document.getElementById("result").style.padding = "10px";
